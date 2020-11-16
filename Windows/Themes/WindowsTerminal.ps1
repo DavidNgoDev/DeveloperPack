@@ -15,5 +15,7 @@ else {
 	Write-Host "[+] Script is running in Admin Mode [+]"
 }
 
+
+
 Write-Output "`n The installation was a success. Press any key to acknowledge!"
 [Console]::ReadKey($true) | Out-Null

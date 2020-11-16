@@ -3,6 +3,15 @@ Write-Host "|                                                                   
 Write-Host "| [+]              Running Prerequisite Scan | Please Wait!              [+] |" -ForegroundColor Green
 Write-Host "|____________________________________________________________________________|" -ForegroundColor Green 
 
+# Check for internet connection
+while (!(test-connection 8.8.8.8 -Count 1 -Quiet)) {
+    Write-Host "[+] No Internet Detected [+]" -ForegroundColor Red
+    Write-Host "[+] Please connect to the internet and try again! [+]" -ForegroundColor Red
+    Write-Host "[+] Press any key to exit!!! [+]" -ForegroundColor Red
+    [Console]::ReadKey($true) | Out-Null
+    exit
+}
+
 # Check to make sure script is run as administrator
 Write-Host "[+] Checking if script is running as administrator.."
 $currentPrincipal = New-Object Security.Principal.WindowsPrincipal( [Security.Principal.WindowsIdentity]::GetCurrent() )
@@ -509,30 +518,51 @@ choco install dellcommandupdate -y
 scoop bucket add scoop-bucket https://github.com/Rigellute/scoop-bucket
 scoop install spotify-tui
 
-Start-Process https://www.logitechg.com/en-us/innovation/g-hub.html
-Start-Process https://3dprinter.sindoh.com/support/downloads/dp200
+Set-Location $Home\Pictures\Wallpapers
+git clone https://github.com/morpheusthewhite/spicetify-themes.git
+Set-Location spicetify-themes
+Copy-Item -r * ~/.config/spicetify/Themes
+spicetify config current_theme Lovelace
+
+Install-Module posh-git -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser
+# Start the default settings
+Set-Prompt
+# Alternatively set the desired theme:
+Set-Theme Operator
+Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
+Start-Process https://github.com/JanDeDobbeleer/oh-my-posh
+
+Start-Process https://download01.logi.com/web/ftp/pub/techsupport/gaming/lghub_installer.exe
+Start-Process https://3dprinter.sindoh.com/en/file/download/?fileNm=1599524415224__3DWOX_Desktop_v1_5_2751_1_setup.zip
+Start-Process https://zpl.io/download-windows-64
+Start-Process https://downloads.surfshark.com/windows/latest/SurfsharkSetup.exe
+Start-Process https://d3l8qviayb6xr0.cloudfront.net/Boom3Dwin/webstore/Boom3D.msi
+Start-Process https://download.tidal.com/desktop/TIDALSetup.exe
 Start-Process https://www.microsoft.com/en-au/microsoft-365/visio/flowchart-software
 Start-Process https://www.microsoft.com/en-au/microsoft-365/project/project-management-software
-Start-Process https://zpl.io/download-windows-64
-Start-Process https://www.autodesk.com.au/
-Start-Process https://www.qt.io/
-Start-Process https://surfshark.com/
-Start-Process https://www.globaldelight.com/boom/
-Start-Process https://offer.tidal.com/download?lang=en
 Start-Process https://www.microsoft.com/en-au/p/soundcloud-for-windows-beta/9nvjbt29b36l?activetab=pivot:overviewtab
-Start-Process https://www.netacad.com/courses/packet-tracer
-Start-Process https://au.mathworks.com/products/matlab.html
-Start-Process https://www.anaconda.com/products/individual
-Start-Process https://www.bleepingcomputer.com/download/rkill/
+Start-Process https://www.netacad.com/portal/resources/file/f89cbfc4-878c-40bc-8ba8-f1acc24957ec
+Start-Process https://repo.anaconda.com/archive/Anaconda3-2020.07-Windows-x86_64.exe
+Start-Process https://download.bleepingcomputer.com/dl/5f7c927722e9f8d5f69f2a0cdbd94b2a/5fb0791e/windows/security/security-utilities/r/rkill/rkill.exe
+Start-Process https://nucleo-app-releases.s3-accelerate.amazonaws.com/windows/Nucleo_2.6.2.exe
+Start-Process https://www.qt.io/download-thank-you?hsLang=en
+Start-Process https://www.autodesk.com.au/
 Start-Process https://www.hitmanpro.com/en-us/hmp.aspx
-Start-Process https://www.kite.com/
+Start-Process https://au.mathworks.com/campaigns/products/trials.html?prodcode=ML
+Start-Process https://alpha.kite.com/release/dls/windows/current
 Start-Process https://www.adobe.com/au/creativecloud.html
 Start-Process https://github.com/alacritty/alacritty/releases
+Start-Process https://github.com/microsoft/winget-cli/releases/tag/v0.2.2941
+Start-Process https://www.dell.com/support/home/en-au/product-support/product/alienware-15-laptop/drivers
 
 $Path = "$Home\Pictures\Wallpapers"
 mkdir $Path
 $images = 'https://i.redd.it/9cv77eoemqa41.png', 'https://i.redd.it/587a3w75p1b51.png', 'https://i.redd.it/bygxp2mhilu51.png', 'https://i.redd.it/cm2l9qq30yz41.png', 'https://i.redd.it/rhu9xgqq9i351.jpg', 'https://external-preview.redd.it/Uob7gkJ1sywmNGCSwGL6oG0mPDwZ-v7_6rR05IBU2cg.jpg?auto=webp&s=f26a972503bbf8355b54d2d603a93d16fc226100', 'https://i.redd.it/mhqluosrksw41.png', 'https://i.redd.it/nvsf29d135051.jpg', 'https://i.redd.it/wi4icfbynhd51.png', 'https://preview.redd.it/teq4suulbvf51.png?width=3440&format=png&auto=webp&s=1c251bc8f84358efd40fedb0a30e98b8c024fab7', 'https://i.redd.it/3o0hkjal8j151.jpg', 'https://i.redd.it/3iwpgz1c9hh41.jpg', 'https://i.redd.it/btqplv4tonv31.png', 'https://i.redd.it/tizoc0t311c51.png', 'https://i.redd.it/qqjhrf0io4c51.png', 'https://i.redd.it/3w67b1kx82z21.png', 'https://i.redd.it/ycn03d7ildi51.png', 'https://i.redd.it/4digo73rwu251.png'
 $Path = "$Home\Pictures\Wallpapers\"
+
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_basic_vimrc.sh
 
 function DownloadFile([Object[]] $sourceFiles,[string]$targetDirectory) {
  $wc = New-Object System.Net.WebClient
