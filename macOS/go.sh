@@ -27,6 +27,7 @@ brew cask install blender
 brew cask install desmume
 brew cask install dosbox
 brew cask install drawio
+brew cask install alfred
 brew cask install dropbox
 brew cask install electron
 brew cask install emacs
@@ -87,3 +88,57 @@ open https://3dprinter.sindoh.com/en/file/download/?fileNm=1596528979276__3DWOX+
 open https://downloads.surfshark.com/macOS/latest/Surfshark.dmg
 open https://github.com/alacritty/alacritty/releases
 open https://pock.dev/download.php?file=pock_0_7_2.zip
+open https://visualstudio.microsoft.com/thank-you-downloading-visual-studio-mac/?sku=communitymac&rel=16
+
+App Store
+Surfshark
+Microsoft To Do List
+Jira
+Speed Test
+Trello
+Magnet
+Encrypto
+Silenz
+Blackmagic Disk Speed Test
+Agenda
+Xcode
+Apple Configurator
+One Drive
+Microsoft Office
+iWorks
+
+Set Apps
+Disk Drill
+Bartenda
+Wallpaper Wizard
+Sip
+Paste
+Side Notes
+Boom 3D
+Clean My Mac X
+CleanShot X
+Squash
+Endurance
+PhotoBulk
+Permute
+Image2icon
+Timing
+Numi
+TouchRetouch
+Mockupups Studio
+Short Menu
+iStats Menu
+Renamer
+Pixel Snap
+SnippetsLab
+Aquarelo
+Photolemur
+Folio
+Gemini
+SheetPanner
+Hype
+Expressions
+
+Bootstrap Studio
+Wacom
+iZotope
