@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo pacman -Syu
 sudo pacman -Syyy
-sudo pacman -S xf86-video-fbdev xorg xorg-xinit nitrogen picom alacritty firefox base-devel
+sudo pacman -S xf86-video-fbdev xorg xorg-xinit nitrogen picom alacritty firefox base-devel wpa_supplicant wireless_tools netctl
 git clone https://aur.archlinux.org/yay-git.git
 cd yay-git/
 makepkg -si
