@@ -71,6 +71,7 @@ brew cask install tidal
 brew cask install transmission
 brew cask install unshaky
 brew cask install vlc
+brew cask install neovim
 brew cask install vmware-fusion
 brew cask install vmware-horizon-client
 brew cask install vox
