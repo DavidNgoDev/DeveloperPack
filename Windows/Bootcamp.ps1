@@ -572,7 +572,7 @@ function DownloadFile([Object[]] $sourceFiles,[string]$targetDirectory) {
 DownloadFile $images $Path
 
 # Rename the computer
-Write-Host "[+] Renaming host to 'Kizio-WS'" -ForegroundColor Green
+Write-Host "[+] Renaming host to 'ChangeMe'" -ForegroundColor Green
 (Get-WmiObject win32_computersystem).rename("Kizio-WS") | Out-Null
 Write-Host "`t[-] Change will take effect after a restart" -ForegroundColor Yellow
 
